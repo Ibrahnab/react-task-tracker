@@ -2,8 +2,11 @@
 import {useState} from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
 
 function App() {
+
+  const [showAddTask, setShowAddTask] = useState (false)
 
   //This is a react hooks example.
   const [tasks, setTasks] = useState([ 
@@ -28,6 +31,15 @@ function App() {
     ]
   )
 
+  //Add task
+  const addTask = (task) => {
+    console.log(task)
+    const id = Math.floor(Math.random()*10000) +1
+    console.log(id)
+    const newTask = {id, ...task}
+    setTasks([...tasks,newTask])
+  }
+
   //delete task
   const deleteTask = (id) => {
     //console.log('delete',id)
@@ -42,20 +54,18 @@ function App() {
     )
   }
 
-  const variable = 2
+  //Application structure is defined here!
   return (
     <div className='container'>
-
-      <h1> hello</h1>
-      <Header title ='a'/>
+      <h1> Task Tracker</h1>
+      <Header onAdd={()=> setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
+      {showAddTask && <AddTask onAdd={addTask} />} 
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete = {deleteTask} onToggle = {toggleReminder}/> : 'No tasks to show'}
     </div>
   );
 }
 
 
-
-//<Tasks tasks={tasks} onDelete={deleteTask}/>
 export default App;
 
 
