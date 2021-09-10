@@ -16,10 +16,12 @@ const Header = ({title, onAdd, showAdd}) => {
   )
 }
 
+//When a title is not passed, write this as a default
 Header.defaultProps = {
   title: 'Add a custom task'
 }
 
+//Sets a condition for the passed title prop
 Header.propTypes = {
   title: PropTypes.string.isRequired,
 }
