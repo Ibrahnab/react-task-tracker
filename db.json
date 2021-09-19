@@ -15,7 +15,7 @@
     {
       "text": "test",
       "day": "wednesday 5:50",
-      "reminder": false,
+      "reminder": true,
       "id": 4
     },
     {
@@ -23,6 +23,18 @@
       "day": "asdasdad",
       "reminder": true,
       "id": 8
+    },
+    {
+      "text": "lmao",
+      "day": "",
+      "reminder": false,
+      "id": 9
+    },
+    {
+      "text": "aa",
+      "day": "sds",
+      "reminder": false,
+      "id": 10
     }
   ]
 }
