@@ -10,14 +10,42 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.outer-container{
+  max-width: 1200px;
+  margin: 30px auto;
+  overflow: auto;
+  border: 1px solid steelblue;
+  display: flex;
+}
+
 .container {
   max-width: 500px;
-  margin: 30px auto;
+  margin: 30px;
   overflow: auto;
   min-height: 300px;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  float:left;
+}
+
+.side-container {
+  min-width: 500px;
+  max-width: 900px;
+  height: auto;
+  margin: 30px;
+  min-height: 300px;
+  overflow: auto;
+  padding: 30px;
+  border: 1px solid steelblue;
+  border-radius: 5px;
+  
+}
+
+.box{
+  width:100px;
+  height:100px;
+
 }
 
 .header {

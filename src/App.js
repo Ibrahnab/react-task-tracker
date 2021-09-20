@@ -94,31 +94,39 @@ function App() {
   return (
 
     <Router>
-      <div className='container'>
-          <h1> Task Tracker</h1>
-         
-           <Header onAdd={()=> setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
-{/*
-          {showAddTask && <AddTask onAdd={addTask} />} 
-
-          {tasks.length > 0 ? <Tasks tasks={tasks} 
-          onDelete = {deleteTask} 
-          onToggle = {toggleReminder}/> : 'No tasks to show'} */}
+      <div className='outer-container'>
+        <div className='container'>
+            <h1> Task Tracker</h1>
           
-          <Route path='/' exact render={(props) => (
-          <>
-
+            <Header onAdd={()=> setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
+  {/*
             {showAddTask && <AddTask onAdd={addTask} />} 
 
             {tasks.length > 0 ? <Tasks tasks={tasks} 
             onDelete = {deleteTask} 
-            onToggle = {toggleReminder}/> : 'No tasks to show'}
+            onToggle = {toggleReminder}/> : 'No tasks to show'} */}
+            
+            <Route path='/' exact render={(props) => (
+            <>
 
-          </>
-          )}/>
-          <Route path='/about' component={About} />
-          <Footer />
+              {showAddTask && <AddTask onAdd={addTask} />} 
+
+              {tasks.length > 0 ? <Tasks tasks={tasks} 
+              onDelete = {deleteTask} 
+              onToggle = {toggleReminder}/> : 'No tasks to show'}
+
+            </>
+            )}/>
+            <Route path='/about' component={About} />
+            <Footer />
         </div>
+        <div className='side-container'>
+          <h1>Description</h1>
+          <p>lorem ipsum etc etc</p>
+          <div className='box'><p>boxy</p></div>
+        </div>
+      </div>
+
     </Router>
   );
 }
